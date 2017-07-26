@@ -6,7 +6,7 @@
     android:versionCode="@APP_VERSION_CODE@"
     android:versionName="@APP_VERSION@" >
 
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="22" />
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -26,11 +26,13 @@
     <uses-feature android:name="android.hardware.wifi" android:required="false" />
 
     <application android:icon="@drawable/ic_launcher"
+    				android:resizeableActivity="true"
 				android:banner="@drawable/banner"
 				android:logo="@drawable/banner"
 				android:label="@string/app_name"
 				android:hasCode="true"
 				android:debuggable="@ANDROID_DEBUGGABLE@">
+        <meta-data android:name="com.samsung.android.keepalive.density" android:value="true"/>
         <activity
             android:name=".Splash"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation|touchscreen|screenLayout|screenSize"
@@ -38,6 +40,11 @@
             android:launchMode="singleInstance"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <layout android:defaultHeight="1080dp"
+                android:defaultWidth="1920dp"
+                android:gravity="center"
+                android:minHeight="480dp"
+                android:minWidth="640dp" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -82,6 +89,11 @@
             android:launchMode="singleInstance"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <layout android:defaultHeight="1080dp"
+                android:defaultWidth="1920dp"
+                android:gravity="center"
+                android:minHeight="480dp"
+                android:minWidth="640dp" />
 
             <!-- Tell NativeActivity the name of or .so -->
             <meta-data
@@ -109,6 +121,11 @@
             android:exported="true" />
 
         <activity android:name=".XBMCSearchableActivity" >
+            <layout android:defaultHeight="1080dp"
+                android:defaultWidth="1920dp"
+                android:gravity="center"
+                android:minHeight="480dp"
+                android:minWidth="640dp" />
              <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
